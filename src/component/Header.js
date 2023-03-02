@@ -6,15 +6,8 @@ import MenuThreeIcon from "./images/menu-3.svg";
 import MenuFourIcon from "./images/menu-4.svg";
 import MenuFiveIcon from "./images/menu-5.svg";
 
-import Topslide from "./TopSlide";
-import About from "./About";
-import Benfites from "./Benfites";
-import WhyChooseUs from "./WhyChooseUs";
-import Process from "./Process";
-import ContactUs from "./ContactUs";
-import Footer from "./Footer";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
-import { NavLink } from "react-router-dom";
 
 function Header() {
   const [toggle, setToggle] = useState(false);
@@ -91,13 +84,7 @@ function Header() {
           </div>
         </div>
       </div>
-      <Topslide />
-      <About />
-      <Benfites />
-      <WhyChooseUs />
-      <Process />
-      <ContactUs />
-      <Footer />
+    
     </>
   );
 }
