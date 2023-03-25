@@ -6,7 +6,7 @@ import Check from "./images/check.svg";
 function WhyChooseUs() {
   return (
     <>
-     <div className="why-choose-us padding-30">
+     <div id="WhyChooseUs" className="why-choose-us padding-30">
         <div className="container">
           <div className="row">
             <div className="heading-sec text-center">

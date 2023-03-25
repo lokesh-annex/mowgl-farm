@@ -1,90 +1,95 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from 'react';
 import Logo from "./images/logo.svg";
 import MenuOneIcon from "./images/menu-1.svg";
 import MenuTwoIcon from "./images/menu-2.svg";
 import MenuThreeIcon from "./images/menu-3.svg";
 import MenuFourIcon from "./images/menu-4.svg";
 import MenuFiveIcon from "./images/menu-5.svg";
-
-import { BrowserRouter as Router, Link } from "react-router-dom";
-
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
+import {Link } from "react-scroll";
 
 function Header() {
-  const [toggle, setToggle] = useState(false);
-  function toggleButton() {
-    if (toggle) {
-    }
-    setToggle(!toggle);
-  }
+  const [scroll, setScroll] = useState(false);
+    useEffect(() => {
+        window.addEventListener("scroll", () => {
+            setScroll(window.scrollY > 50);
+        });
+    }, []);
+  const renderTooltip = (props) => (
+    <Tooltip className="button-tooltip" id="button-tooltip" {...props}>
+     1234-567-8899
+    </Tooltip>
+  );
   return (
     <>
-      <div className="section_one bg-one">
+      <div  className={scroll?"header fixed section_one bg-one":"header section_one bg-one"}>
         <div className="container">
           <div className="header white_header">
             <div className="row">
+              
               <div className="col-lg-3 col-md-7 col-sm-7 col-7 align-self-center">
                 <div className="logo">
                   <img className="img-fluid" src={Logo} />
                 </div>
               </div>
               <div className="col-lg-9 col-md-5 col-sm-5 col-5 align-self-center">
-                <div className={toggle ? "active-class nav-menu" : "nav-menu"}>
+                <div className="active-class nav-menu">
                   <ul>
                     <li>
-                      <a exact to="/">
+                    <Link href='' to="Home" spy={true} smooth={true} duration={500} > 
                         <span className="menu-icon">
                           <img className="img-fluid" src={MenuOneIcon} />
                         </span>
                         PRODUCTS
-                      </a>
+                        </Link>
                     </li>
                     <li>
-                      <a to="/adani">
+                    <Link href='' to="WhyChooseUs" spy={true} smooth={true} duration={500} > 
                         <span className="menu-icon">
                           <img className="img-fluid" src={MenuTwoIcon} />
                         </span>
                         WHY US
-                      </a>
+                        </Link>
                     </li>
                     <li>
-                      <a to="/trina">
+                    <a href='tel:+12345678899'>
                         <span className="menu-icon">
                           <img className="img-fluid" src={MenuThreeIcon} />
                         </span>
-                        CALL
-                      </a>
-                    </li>
+                        <OverlayTrigger
+                          placement="bottom"
+                          delay={{ show: 250, hide: 2000 }}
+                          overlay={renderTooltip}
+                        >
+                          <span variant="success">CALL</span>
+                        </OverlayTrigger>
+                        </a>
+
+                        </li>
                     <li>
-                      <a to="/havells">
+                    <Link href='' to="ContactUs" spy={true} smooth={true} duration={500} >
                         <span className="menu-icon">
                           <img className="img-fluid" src={MenuFourIcon} />
                         </span>
                         TRIAL PACK
-                      </a>
+                        </Link>
                     </li>
                     <li>
-                      <a to="/contact">
+                    <Link href='' to="ContactUs" spy={true} smooth={true} duration={500} >
                         <span className="menu-icon">
                           <img className="img-fluid" src={MenuFiveIcon} />
                         </span>
                         REACH US
-                      </a>
+                        </Link>
                     </li>
                   </ul>
-                  <div className="toggle-icon" onClick={toggleButton}>
-                    <div className="menu_bar">
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    
     </>
   );
 }

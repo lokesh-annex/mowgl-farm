@@ -5,7 +5,7 @@ import ContactFrom from "./ContactFrom";
 function ContactUs() {
   return (
     <>
-       <div className="contact-us padding-100">
+      <div id="ContactUs" className="contact-us padding-100">
         <div className="container">
           <div className="row">
             <div className="col-sm-6">

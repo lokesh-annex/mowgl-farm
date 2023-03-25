@@ -5,9 +5,8 @@ class NameForm extends React.Component {
     super(props);
     this.state = {
       name: "",
-      email: "",
+      number: "",
       subject: "",
-      message: "",
       loading: false,
     };
   }
@@ -28,7 +27,7 @@ class NameForm extends React.Component {
       body: JSON.stringify({
         userId: data.name,
         id: 1,
-        title: data.email,
+        title: data.number,
         body: data.subject,
       }),
     };
@@ -69,7 +68,7 @@ class NameForm extends React.Component {
               type="number"
               onChange={this.handleInput}
               className="form-control"
-              name="email"
+              name="number"
               placeholder="Your Number"
               required
             />

@@ -6,7 +6,7 @@ import CowOne from "./images/cow-one.png";
 function About() {
   return (
     <>
-     <div className="about-us padding-50">
+     <div  className="about-us padding-50">
         <div className="cow-image-about">
           <img className="img-fluid" src={CowOne} />
         </div>
@@ -24,7 +24,7 @@ function About() {
                 text ever since the 1500s, when an unknown printer took a galley
                 of type and scrambled it to make a type specimen book. It has
                 survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged.
+                electronic typesetting, remaining essentially unchanged. 
               </p>
               <p className="op-70">
                 Pellentesque facilisis volutpat dolor sed efficitur. Vivamus

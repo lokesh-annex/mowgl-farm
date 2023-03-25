@@ -2,14 +2,20 @@ import React, { useState } from "react";
 import SlideRight from "./images/slider-right.png";
 import Cow from "./images/cow-s.svg";
 import BottomBg from "./images/bot-line.svg";
+import {Animated} from "react-animated-css";
 
 function Slide() {
   return (
     <>
-      <div className="top-slide bg-one">
+
+   
+
+      <div id="Home" className="top-slide bg-one">
         <div className="container">
+       
           <div className="row">
             <div className="col-sm-5">
+            <Animated animationIn="bounceInLeft" animationInDuration="2000" animationOut="fadeOut" isVisible={true}>
               <div className="uper-slide-heading">FRESH Mowgli farm GHEE</div>
               <h1>Pure Desi Ghee That Maintains A Perfect</h1>
               <p>
@@ -17,6 +23,7 @@ function Slide() {
                 your doorstep. Everyday we supply FRESH milk that is 100% pure
                 and unadulterated, giving you the best milk has to offer.
               </p>
+              </Animated>
               <div className="cow-image">
                 <img className="img-fluid" src={Cow} />
               </div>
