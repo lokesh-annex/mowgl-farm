@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import AbtOne from "./images/ab-1.png";
 import AbtTwo from "./images/ab-2.png";
 import CowOne from "./images/cow-one.png";
+import {AnimationOnScroll } from "react-animation-on-scroll";
+import "animate.css/animate.min.css";
 
 function About() {
   return (
@@ -13,6 +15,7 @@ function About() {
         <div className="container">
           <div className="row">
             <div className="col-sm-6">
+            
               <div className="d-flex align-items-center">
                 <div className="line-h mr-20"></div>
                 <h2>ABOUT US</h2>
@@ -32,8 +35,10 @@ function About() {
                 eros mollis ultrices. Nullam condimentum, nibh et posuere
                 cursus.
               </p>
+             
             </div>
             <div className="col-sm-6">
+            <AnimationOnScroll duration="1s" animateIn="animate__swing">
               <div className="about-image">
                 <div className="about-image-one">
                   <img className="img-fluid" src={AbtOne} />
@@ -42,6 +47,7 @@ function About() {
                   <img className="img-fluid" src={AbtTwo} />
                 </div>
               </div>
+              </AnimationOnScroll >
             </div>
           </div>
         </div>

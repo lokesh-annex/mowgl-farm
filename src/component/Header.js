@@ -8,6 +8,8 @@ import MenuFiveIcon from "./images/menu-5.svg";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import {Link } from "react-scroll";
+import MobileMenu from "./MenuMobile";
+
 
 function Header() {
   const [scroll, setScroll] = useState(false);
@@ -27,14 +29,15 @@ function Header() {
         <div className="container">
           <div className="header white_header">
             <div className="row">
-              
+            
               <div className="col-lg-3 col-md-7 col-sm-7 col-7 align-self-center">
                 <div className="logo">
                   <img className="img-fluid" src={Logo} />
                 </div>
               </div>
               <div className="col-lg-9 col-md-5 col-sm-5 col-5 align-self-center">
-                <div className="active-class nav-menu">
+              <MobileMenu/>
+                <div className="active-class nav-menu d-none d-sm-block">
                   <ul>
                     <li>
                     <Link href='' to="Home" spy={true} smooth={true} duration={500} > 
@@ -59,7 +62,7 @@ function Header() {
                         </span>
                         <OverlayTrigger
                           placement="bottom"
-                          delay={{ show: 250, hide: 2000 }}
+                          delay={{ show: 250, hide: 500 }}
                           overlay={renderTooltip}
                         >
                           <span variant="success">CALL</span>

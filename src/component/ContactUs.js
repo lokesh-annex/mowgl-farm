@@ -1,21 +1,27 @@
 import React, { useState } from "react";
 import Contact from "./images/contact-us.svg";
 import ContactFrom from "./ContactFrom";
+import {AnimationOnScroll } from "react-animation-on-scroll";
+import "animate.css/animate.min.css";
 
 function ContactUs() {
   return (
     <>
+     <AnimationOnScroll duration="1" animateIn="animate__bounceInUp">
       <div id="ContactUs" className="contact-us padding-100">
         <div className="container">
           <div className="row">
             <div className="col-sm-6">
+           
               <div className="contact-us-heading">
                 <h2>Get the direction</h2>
                 <div className="line-h mr-20"></div>
               </div>
               <img className="img-fluid " src={Contact} />
+              
             </div>
             <div className="col-sm-6">
+           
               <div className="contact-us-from">
                 <div className="address-section">
                   <ul>
@@ -81,10 +87,12 @@ function ContactUs() {
                   <ContactFrom />
                 </div>
               </div>
+             
             </div>
           </div>
         </div>
       </div>
+      </AnimationOnScroll>
     </>
   );
 }

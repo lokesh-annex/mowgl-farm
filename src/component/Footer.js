@@ -6,7 +6,7 @@ function Footer() {
     <>
      <div className="footer">
         <div className="container">
-          <ul className="d-flex justify-content-center">
+          <ul className="d-flex justify-content-center flex-wrap">
             <li>
               <a href="">PRIVACY POLICY</a>
             </li>
